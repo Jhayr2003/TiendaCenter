@@ -1,0 +1,52 @@
+footer {
+            background-color: black;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .PieDePagina {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+   
+        .contacto, .enlaces-importantes, .Informacion {
+            flex: 1;
+            text-align: left;
+            padding: 0 20px;
+            margin-bottom: 20px;
+        }
+
+        .contacto h3, .enlaces-importantes h3, .Informacion h3 {
+            color: #fff;
+            font-size: 20px; 
+            
+        }
+/*Configuracion de los ul */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            
+        }
+        /*Configuracion de los links*/
+        a{
+            color: #fff;
+            text-decoration: none;
+           
+        }
+        a:hover{
+            color: #ffb638;
+        }
+        
+h4 {
+    line-height:0.45; 
+    font-size: 20px;
+}
+li {
+     margin: 5px 0;
+            line-height: 1.2; 
+    font-size: 18px; 
+}
+
+ 

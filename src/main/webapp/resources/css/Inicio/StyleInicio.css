@@ -1,0 +1,221 @@
+*{
+    z-index: 10;
+}
+
+body {
+    font-family: 'Press Start 2P', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    background-image: url(https://d1di2lzuh97fh2.cloudfront.net/files/4c/4c5/4c5fs8.jpg?ph=4ab7110501);
+}
+/* Estilos para el contenido principal */
+.contenedorproductos {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.titulo {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: Oooh Baby;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 1s;
+    cursor: pointer;
+    color: #cc00cc;
+    ; /* Hacemos el texto transparente */
+
+    /* Usamos múltiples sombras de texto para cambiar los colores */
+    text-shadow: 0 0 5px #cc00cc,
+        0 0 25px #cc00cc,
+        0 0 50px #cc00cc,
+        0 0 100px #cc00cc;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Estilos para las categorías y productos */
+.productos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.producto {
+    text-align: center;
+    width: 100%;
+    display:flex;
+    border-radius: 50px;
+    transition: 0.25s all ease-in-out;
+    position: relative;
+    z-index: 4;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 6%;
+}
+
+.producto img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.producto-nombre {
+    background: rgba(0, 0, 0, 0.7); /* Fondo negro semitransparente */
+    backdrop-filter: blur(10px); /* Aplica un filtro de desenfoque */
+    position: relative;
+    overflow: hidden;
+    font-size: 20px;
+    font-family: Oooh Baby;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 1s;
+    cursor: pointer;
+    color: #fff; /* Hacemos el texto transparente */
+    /* Usamos múltiples sombras de texto para cambiar los colores */
+    text-shadow: 0 0 5px #cc00cc,
+        0 0 25px #cc00cc,
+        0 0 50px #cc00cc,
+        0 0 100px #cc00cc;
+    pointer-events: none;
+    user-select: none;
+    position: absolute; /* Hace que el contenido sea de posición absoluta */
+    top: 50%; /* Alinea el texto en la mitad vertical del contenedor */
+    left: 50%; /* Alinea el texto en la mitad horizontal del contenedor */
+    transform: translate(-50%, -50%); /* Centra el texto correctamente */
+    text-align: center;
+    margin-top: 165px;
+    user-select: none;
+    text-align: center;
+    padding-top: 25px; /* Espacio dentro del cuadro en la parte superior */
+    padding-bottom: 18px; /* Espacio dentro del cuadro en la parte inferior */
+    padding-left: 130px; /* Espacio dentro del cuadro en la parte izquierda */
+    padding-right: 140px;
+    width: 118px;
+    white-space: nowrap;
+    border-radius: 0px 0px 10px 10px;
+}
+.producto:hover{
+                transform: scale(1.08,1.08);
+            }
+.producto-nombre-mando{
+    background: rgba(0, 0, 0, 0.7); /* Fondo negro semitransparente */
+    backdrop-filter: blur(10px); /* Aplica un filtro de desenfoque */
+    font-size: 18px;
+    font-family: Oooh Baby;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 1s;
+    cursor: pointer;
+    color: #fff; /* Hacemos el texto transparente */
+    /* Usamos múltiples sombras de texto para cambiar los colores */
+    text-shadow: 0 0 5px #cc00cc,
+        0 0 25px #cc00cc,
+        0 0 50px #cc00cc,
+        0 0 100px #cc00cc;
+    pointer-events: none;
+    user-select: none;
+    position: absolute; /* Hace que el contenido sea de posición absoluta */
+    top: 50%; /* Alinea el texto en la mitad vertical del contenedor */
+    left: 50%; /* Alinea el texto en la mitad horizontal del contenedor */
+    transform: translate(-50%, -50%); /* Centra el texto correctamente */
+    margin-top: 165px;
+    user-select: none;
+    padding-top: 15px; /* Espacio dentro del cuadro en la parte superior */
+    padding-bottom: 5px; /* Espacio dentro del cuadro en la parte inferior */
+    padding-left: 130px; /* Espacio dentro del cuadro en la parte izquierda */
+    padding-right: 140px;
+    width: 118px;
+    border-radius: 0px 0px 10px 10px;
+}
+/*Estilo para preventa*/
+.contenedorpreventa {
+    max-width: 1500px;
+    padding: 10px;
+    margin: 0 auto;
+    text-align: center;
+}
+.titulopreventa {
+    font-size: 36px;
+    text-align: center;
+    margin: 0 auto;
+    color: #fff;
+}
+.productopre-imagen{
+    max-width: 100%;
+    border-bottom: 2px solid #000;
+    width: 280px;
+    height: 280px;
+}
+
+.productospreventa {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 2%;
+}
+.productopreve {
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #ffb638;
+    padding: 20px;
+    background-color: white;
+    cursor: pointer;
+}
+.productopreventa-informacion{
+    border-bottom: 2px solid #000;
+    color: black;
+}
+.productopreve:hover{
+                transform: scale(1.08,1.08);
+            }
+/* Estilos para el pie de página */
+.contenedorofertas {
+    max-width: 1500px;
+    padding: 10px;
+    margin: 0 auto;
+    text-align: center;
+}
+.tituloofertas {
+    font-size: 36px;
+    text-align: center;
+    margin: 0 auto;
+    color: #fff;
+}
+.productofe-imagen img{
+    width: 280px;
+    height: 280px;
+}
+
+.productosoferta {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 2%;
+}
+.productofe-precio{
+    display: flex; /* Hace que los elementos dentro del contenedor se muestren en una línea */
+    align-items: center; /* Alinea verticalmente los elementos en el centro */
+    gap: 50px;
+}
+.productofee-precio{
+    text-decoration: line-through;
+    color: #888;
+}
+.productofe {
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #ffb638;
+    padding: 20px;
+    background-color: white;
+    cursor: pointer;
+    margin-bottom: 10%;
+}
+.productofe-informacion{
+    border-bottom: 2px solid #000;
+    color: black;
+}
+.productofe:hover{
+    transform: scale(1.08,1.08);
+}

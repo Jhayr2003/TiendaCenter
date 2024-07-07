@@ -1,0 +1,111 @@
+body{
+    margin:0; 
+    padding: 0;
+background-image: url(https://d1di2lzuh97fh2.cloudfront.net/files/4c/4c5/4c5fs8.jpg?ph=4ab7110501);
+}
+.formulario{
+    
+    width: 500px;
+    background-color: white;
+    border-radius: 10px;
+    margin: 10px auto; 
+    padding: 50px;
+}
+.formulario h1{
+    text-align: center;
+    padding:0 0 20px 0; 
+    border-bottom: 1px solid #797979 ; 
+}
+.formulario form {
+    padding: 0 40px;
+    box-sizing: border-box;
+   
+}
+form .username, form .contrasena {
+  position:relative;
+  border-bottom: 2px solid #797979  ;
+  margin:30px 0;
+}
+.username input, .contrasena input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.username label,
+.contrasena label {
+    position: absolute;
+    top: 10px; 
+    left: 5px; 
+    color: #797979;
+    font-size: 16px;
+    pointer-events: none;
+    transition: all 0.2s;
+}
+
+.username input:focus + label,
+.contrasena input:focus + label,
+.username input:valid + label,
+.contrasena input:valid + label {
+    top: -10px; 
+    font-size: 16px; 
+    color: #797979;
+}
+
+.username span::before ,.contrasena span::before  {
+    content: '';
+    position:absolute;
+    top:40px;
+    left:0;
+    width:0%;
+    height: 2px;
+    background: #797979; 
+    transition: .5s;   
+}
+.username input:focus ~ label,.contrasena input:focus ~ label
+.username input:focus ~ label,.contrasena input:focus ~ label{
+    top: -5px;
+    color: #797979;
+}
+.username input:focus ~ span::before,.contrasena input:focus ~ span::before
+.username input:focus ~ span::before,.contrasena input:focus ~ span::before{
+    width: 100%;
+}
+
+.recordar{
+    margin:-5px 0 20px 5px;
+    color:  #000;  /*COLOR PARA "OLVIDO SU CONTRASEÑA"*/
+    cursor: pointer;
+}
+.recordar:hover{
+    text-decoration: underline;
+}
+input[type="submit"]{
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    background: #ffb638;
+    border-radius: 25px;
+    font-size: 18px;
+    color:white;   
+    cursor: pointer;
+    outline: none;
+    margin-bottom: 10px; /* Separacion entre los textos*/
+}
+input[type="submit"]:hover{
+    border-color:  #ffb638;
+    transition: .5s;    
+}
+
+.error{
+    background-color: red;
+    color:black;
+    padding:10px;
+    width: 95%;
+    border-radius: 5px;
+    margin: 20px auto;
+}
