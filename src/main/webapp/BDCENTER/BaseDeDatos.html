@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+
+
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+    -- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 11-07-2024 a las 01:07:51
+-- Versión del servidor: 10.4.27-MariaDB
+-- Versión de PHP: 8.2.0
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de datos: `pruebacenter`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `carrito_usuarios`
+--
+
+CREATE TABLE `carrito_usuarios` (
+  `id_sesion` varchar(255) NOT NULL,
+  `id_producto` int(11) NOT NULL,
+  `cantidad` int(11) NOT NULL,
+  `total` decimal(10,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `carrito_usuarios`
+--
+
+INSERT INTO `carrito_usuarios` (`id_sesion`, `id_producto`, `cantidad`, `total`) VALUES
+('qdsb627hknddojb6b3o5lqt11h', 3, 1, 179.90),
+('qdsb627hknddojb6b3o5lqt11h', 4, 1, 359.90);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `categoriasn1`
+--
+
+CREATE TABLE `categoriasn1` (
+  `id` int(11) NOT NULL,
+  `Nombre` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `categoriasn1`
+--
+
+INSERT INTO `categoriasn1` (`id`, `Nombre`) VALUES
+(1, 'Gaming'),
+(2, 'Funko'),
+(3, 'Coleccionables'),
+(4, 'Audio'),
+(5, 'Electronica');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `categoriasn2`
+--
+
+CREATE TABLE `categoriasn2` (
+  `id` int(11) NOT NULL,
+  `Nombre` varchar(30) NOT NULL,
+  `idCategoriaN1` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `categoriasn2`
+--
+
+INSERT INTO `categoriasn2` (`id`, `Nombre`, `idCategoriaN1`) VALUES
+(1, 'Consolas', 1),
+(2, 'Juegos', 1),
+(3, 'Teclados', 1),
+(4, 'Mando', 1),
+(5, 'Streaming', 1),
+(6, 'Funko pop', 2),
+(7, 'Box Collector', 2),
+(8, 'Pop Keychain', 2),
+(9, 'Peluches', 2),
+(10, 'Exclusivos TechnoGame', 2),
+(11, 'Banpresto', 3),
+(12, 'Bandai', 3),
+(13, 'Jakks Pacific', 3),
+(14, 'Chibi', 3),
+(15, 'Parlantes', 4),
+(16, 'Parlanes Gamer', 4),
+(17, 'Audifonos', 4),
+(18, 'Audifonos gamer', 4),
+(19, 'Smartphones', 5),
+(20, 'Smartwatch', 5),
+(21, 'Baterias Portatiles', 5),
+(22, 'Streaming', 5);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `categoriasn3`
+--
+
+CREATE TABLE `categoriasn3` (
+  `id` int(11) NOT NULL,
+  `Nombre` varchar(40) NOT NULL,
+  `idCategoriaN2` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `categoriasn3`
+--
+
+INSERT INTO `categoriasn3` (`id`, `Nombre`, `idCategoriaN2`) VALUES
+(1, 'Playstation 5', 1),
+(2, 'Playstation 4', 1),
+(3, 'Nintendo Switch', 1),
+(4, 'Assassins Creed Mirage', 2),
+(5, 'Call of Duty: Modern Warfare II', 2),
+(6, 'Super Mario RPG', 2),
+(7, 'HyperX', 3),
+(8, 'Logitech G', 3),
+(9, 'Razer', 3),
+(10, 'Mando PS5', 4),
+(11, 'Mando PS4', 4),
+(12, 'Joy Con Switch', 4),
+(13, 'Microfonos', 5),
+(14, 'Camaras', 5),
+(15, 'Luces Led de colores', 5),
+(16, 'Marvel Collector', 7),
+(17, 'DC Colecctor', 7),
+(18, 'Minions', 8),
+(19, 'Boruto', 8),
+(20, 'Indiana Jones', 8),
+(21, 'Attack on Titan', 11),
+(22, 'Bleach', 11),
+(23, 'Demon Slayer', 11),
+(24, 'Star Wars', 12),
+(25, 'Disney', 12),
+(26, 'Saint Seiya', 12),
+(27, 'Sonic The HedgeHog', 13),
+(28, 'Crash Bandicoot', 13),
+(29, 'Donkey Kong', 13),
+(30, 'Bose', 15),
+(31, 'JBL', 15),
+(32, 'Xiaomi', 15),
+(33, 'Bose', 16),
+(34, 'Google', 16),
+(35, 'Amazon', 16),
+(36, 'BlackSheep', 17),
+(37, 'JBL', 17),
+(38, 'Sonic', 17),
+(39, 'Astro', 18),
+(40, 'Razer', 18),
+(41, 'Turtle Beach', 18),
+(42, 'Xiaomi', 19),
+(43, 'Xiaomi', 20),
+(44, 'Roku reproductor', 22),
+(45, 'Amazon Fire TV Stick 4K', 22);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `preguntasfrecuentes`
+--
+
+CREATE TABLE `preguntasfrecuentes` (
+  `id` int(11) NOT NULL,
+  `pregunta` varchar(500) NOT NULL,
+  `respuesta` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `preguntasfrecuentes`
+--
+
+INSERT INTO `preguntasfrecuentes` (`id`, `pregunta`, `respuesta`) VALUES
+(1, 'Si llamo por teléfono o me contacto directamente, ¿Podré obtener algún descuento?', 'No. Los precios publicados son nuestros mejores valores y sólo se aplican descuentos electrónicos con códigos válidos de alguna promoción. Si llamas o te comunicas por correo electrónico no obtendrás una atención distinta a la que recibe todo el resto de los clientes.'),
+(2, '¿Puedo cancelar con otra divisa?', 'No. Todas las operaciones de TechnoGame son en soles.'),
+(3, '¿Los precios publicados incluyen IGV?', 'Sí, absolutamente todos los precios publicados en Technogames incluyen el impuesto al valor agregado IGV.'),
+(4, '¿Cómo recibiré mi boleta o factura?', 'La boleta o factura correspondiente te llegará junto con el producto dentro del paquete. Si por alguna razón no recibes tu boleta o factura junto con el producto, comunícate inmediatamente a través de nuestro sistema de Servicio al Cliente.'),
+(5, '¿Puedo ir al local, preguntar y ver directamente los productos?', '¡Por supuesto! Estaremos más que felices en recibirte y aclarar todas tus dudas y podrás comprar sin necesidad de colocar una orden por internet.'),
+(6, 'Tengo problemas con el producto que compré en Technogame ¿Cómo pido ayuda?', 'Recuerda que la mejor fuente de información para cualquier producto es la página web del fabricante. Ahí podrás encontrar información para el correcto funcionamiento. Si tienes problemas que no puedes solucionar, comunícate con nosotros a través de nuestro sistema de Servicio al Cliente y haremos todo lo posible por ayudarte.');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `productos`
+--
+
+CREATE TABLE `productos` (
+  `id` int(11) NOT NULL,
+  `Nombre` varchar(200) NOT NULL,
+  `Precio` decimal(6,2) NOT NULL,
+  `Stock` int(11) NOT NULL,
+  `Imagen` varchar(10) NOT NULL,
+  `idCategoriaN2` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `productos`
+--
+
+INSERT INTO `productos` (`id`, `Nombre`, `Precio`, `Stock`, `Imagen`, `idCategoriaN2`) VALUES
+(1, 'Hyperx Alloy Origins 60 Teclado Mecánico - Switch Aqua', 359.90, 20, 'H1.png', 3),
+(2, 'Hyperx Alloy MKW100 Teclado Mecánico RBG - Switch RED', 289.90, 21, 'H2.png', 3),
+(3, 'HyperX Teclado Alloy Core RGB', 179.90, 22, 'H3.png', 3),
+(4, 'HyperX Teclado Alloy Origins 60 BK', 359.90, 23, 'H4.png', 3),
+(5, 'Logitech G713 TKL Aurora Teclado Mecánico RGB Lineal - Blanco', 499.90, 24, 'L1.png', 3),
+(6, 'Logitech G413 TKL Teclado Mecánico - Negro', 279.90, 25, 'L2.png', 3),
+(7, 'Logitech Mecánico G413 SE Teclado - Negro', 299.90, 26, 'L3.png', 3),
+(8, 'Logitech G Pro Teclado Mecánico - League of Legends', 499.90, 27, 'L4.png', 3),
+(9, 'Razer Huntsman V2 TKL Purple Switch Teclado - Negro', 684.90, 28, 'R1.png', 3),
+(10, 'Razer Huntsman Mini Mecánico Chroma Teclado - Blanco', 499.90, 29, 'R2.png', 3),
+(11, 'Razer Blackwidow V3 Halo Infinite Mech Teclado Green Switch', 599.90, 30, 'R3.png', 3),
+(12, 'Razer Cynosa V2 Membrana SP Chroma Black', 179.90, 20, 'R4.png', 3),
+(13, 'PlayStation 5 Consola (ranura disco) + God of War Ragnarok', 3599.90, 9, 'PS5_1.jpg', 1),
+(14, 'PlayStation 5 con ranura de disco + FC 24', 3499.90, 15, 'PS5_2.jpg', 1),
+(15, 'PlayStation 5 Consola – Edición Spider-Man 2', 3999.90, 7, 'PS5_3.jpg', 1),
+(16, 'PlayStation VR2 + Horizon: Call of the Mountain', 3899.90, 11, 'PS5_4.jpg', 1),
+(17, 'Xbox Series X Consola 1 TB + Diablo IV', 2899.90, 13, 'X1.jpg', 1),
+(18, 'Xbox Series X Consola 1 TB', 2899.90, 8, 'X2.jpg', 1),
+(19, 'PlayStation 4 Consola 1TB + God of War Ragnarok', 2399.90, 14, 'PS4.jpg', 1),
+(20, 'Steam Deck Consola Portátil - 64 GB', 3499.90, 7, 'SD1.jpg', 1),
+(21, 'Nintendo Switch OLED Consola – Edición Mario Red', 2199.90, 9, 'N1.jpg', 1),
+(22, 'Nintendo Switch OLED Consola - Edición Zelda Tears of the Kingdom', 2099.90, 15, 'N2.jpg', 1),
+(23, 'Nintendo Switch Lite Consola (Azul)', 1199.90, 7, 'N3.jpg', 1),
+(24, 'Nintendo Switch Consola (Joy-Con Rojo/Azul Neón)', 1749.90, 10, 'N4.jpg', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `reclamos`
+--
+
+CREATE TABLE `reclamos` (
+  `id` int(11) NOT NULL,
+  `NomApe` varchar(50) DEFAULT NULL,
+  `Domicilio` varchar(100) DEFAULT NULL,
+  `Dni` varchar(10) DEFAULT NULL,
+  `Email` varchar(50) DEFAULT NULL,
+  `Numero` varchar(15) DEFAULT NULL,
+  `tipoBien` varchar(10) DEFAULT NULL,
+  `Monto` varchar(6) DEFAULT NULL,
+  `Descripcion` varchar(200) DEFAULT NULL,
+  `TipoReclamo` varchar(10) DEFAULT NULL,
+  `Detalle` varchar(500) DEFAULT NULL,
+  `Pedido` varchar(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `registrocuenta`
+--
+
+CREATE TABLE `registrocuenta` (
+  `id` int(11) NOT NULL,
+  `Nombre` varchar(150) DEFAULT NULL,
+  `Apellido` varchar(150) DEFAULT NULL,
+  `Correo` varchar(250) DEFAULT NULL,
+  `Telefono` decimal(9,0) DEFAULT NULL,
+  `Contraseña` varchar(250) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `registrocuenta`
+--
+
+INSERT INTO `registrocuenta` (`id`, `Nombre`, `Apellido`, `Correo`, `Telefono`, `Contraseña`) VALUES
+(2, 'Luciano', 'Albornoz Hernandez', 'Luciano-1995@hotmail.com', 241442584, 'lua1995'),
+(3, 'María', 'García Pérez', 'maria.garcia@email.com', 123456789, 'maria12345'),
+(4, 'Juan', 'López Rodríguez', 'juan.lopez@email.com', 987654321, 'juan98765'),
+(5, 'Ana', 'Fernández López', 'ana.fernandez@email.com', 555566667, 'ana55555'),
+(6, 'Luis', 'Martínez González', 'luis.martinez@email.com', 653699996, 'luis66666'),
+(7, 'Sofía', 'Pérez Sánchez', 'sofia.perez@email.com', 757688877, 'sofia77777'),
+(8, 'Carlos', 'Ramírez García', 'carlos.ramirez@email.com', 241899988, 'carlos88888'),
+(9, 'Laura', 'Torres Fernández', 'laura.torres@email.com', 145911119, 'laura99999'),
+(10, 'Javier', 'Díaz Martínez', 'javier.diaz@email.com', 531122221, 'javier11111'),
+(11, 'Isabel', 'Gómez López', 'isabel.gomez@email.com', 252233332, 'isabel22222'),
+(12, 'Pablo', 'Hernández Soto', 'pablo.hernandez@email.com', 102344443, 'pablo33333'),
+(13, 'jhayr', 'cerna', 'jhayr10@gmail.com', 123456789, '123456789'),
+(14, 'andres', 'cerna ', 'andres10@gmail.com', 123456724, '1'),
+(15, 'lucas', '123445', 'lucas@hotmail.com', 123456789, '123'),
+(16, 'lucas', 'peres arteaga', 'lucas1@hotmail.com', 123456789, '12344'),
+(17, 'LUCIA', 'HERNANDEZ', 'LUCIA@HOTMAIL.COM', 123456789, '1234'),
+(18, 'lucho', 'cerna', 'lucho@gmail.com', 123456789, '123'),
+(19, 'jhayr', 'cerna', 'jhayr123', 124567891, '123'),
+(20, 'ñaño ge', 'daddada', 'dadadad@gmail.com', 124555522, '123');
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `carrito_usuarios`
+--
+ALTER TABLE `carrito_usuarios`
+  ADD KEY `id_producto` (`id_producto`);
+
+--
+-- Indices de la tabla `categoriasn1`
+--
+ALTER TABLE `categoriasn1`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `categoriasn2`
+--
+ALTER TABLE `categoriasn2`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idCategoriaN1` (`idCategoriaN1`);
+
+--
+-- Indices de la tabla `categoriasn3`
+--
+ALTER TABLE `categoriasn3`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idCategoriaN2` (`idCategoriaN2`);
+
+--
+-- Indices de la tabla `preguntasfrecuentes`
+--
+ALTER TABLE `preguntasfrecuentes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `productos`
+--
+ALTER TABLE `productos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idCategoriaN2` (`idCategoriaN2`);
+
+--
+-- Indices de la tabla `reclamos`
+--
+ALTER TABLE `reclamos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `registrocuenta`
+--
+ALTER TABLE `registrocuenta`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `categoriasn1`
+--
+ALTER TABLE `categoriasn1`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de la tabla `categoriasn2`
+--
+ALTER TABLE `categoriasn2`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT de la tabla `categoriasn3`
+--
+ALTER TABLE `categoriasn3`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+
+--
+-- AUTO_INCREMENT de la tabla `preguntasfrecuentes`
+--
+ALTER TABLE `preguntasfrecuentes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de la tabla `productos`
+--
+ALTER TABLE `productos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
+-- AUTO_INCREMENT de la tabla `reclamos`
+--
+ALTER TABLE `reclamos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `registrocuenta`
+--
+ALTER TABLE `registrocuenta`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `carrito_usuarios`
+--
+ALTER TABLE `carrito_usuarios`
+  ADD CONSTRAINT `carrito_usuarios_ibfk_1` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `categoriasn2`
+--
+ALTER TABLE `categoriasn2`
+  ADD CONSTRAINT `categoriasn2_ibfk_1` FOREIGN KEY (`idCategoriaN1`) REFERENCES `categoriasn1` (`id`);
+
+--
+-- Filtros para la tabla `categoriasn3`
+--
+ALTER TABLE `categoriasn3`
+  ADD CONSTRAINT `categoriasn3_ibfk_1` FOREIGN KEY (`idCategoriaN2`) REFERENCES `categoriasn2` (`id`);
+
+--
+-- Filtros para la tabla `productos`
+--
+ALTER TABLE `productos`
+  ADD CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`idCategoriaN2`) REFERENCES `categoriasn2` (`id`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+    
+    </body>
+</html>
