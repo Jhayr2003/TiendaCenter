@@ -16,6 +16,10 @@
         <servlet-name>SvRegistrarCuenta</servlet-name>
         <servlet-class>servlets.SvRegistrarCuenta</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SvInicioSesion</servlet-name>
+        <servlet-class>servlets.SvInicioSesion</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SvHome</servlet-name>
         <url-pattern>/SvHome</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>SvRegistrarCuenta</servlet-name>
         <url-pattern>/SvRegistrarCuenta</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SvInicioSesion</servlet-name>
+        <url-pattern>/SvInicioSesion</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

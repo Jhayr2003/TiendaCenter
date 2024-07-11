@@ -17,7 +17,7 @@
 <body>
     <div class="formulario">
         <h1>INICIO DE SESIÓN</h1>
-        <form method="post" action="SvVerificarCuenta">
+        <form method="post" action="SvInicioSesion">
             <div class="username">
                 <input type="text" name="correo" required>
                 <label>Correo electrónico</label>

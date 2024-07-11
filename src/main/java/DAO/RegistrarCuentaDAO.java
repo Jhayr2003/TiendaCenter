@@ -3,6 +3,7 @@ package DAO;
 import Conexion.ConectarBD;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import modelo.CrearCuenta;
 public class RegistrarCuentaDAO {
@@ -38,5 +39,29 @@ public class RegistrarCuentaDAO {
         }
     }
 
-
+     public String InicioSesion(CrearCuenta cuenta) {
+    String sql = "SELECT correo, Contraseña FROM registrocuenta WHERE correo = ? AND Contraseña = ?";
+    try (Connection con = conectar.getConnection(); 
+         PreparedStatement ps = con.prepareStatement(sql)) 
+    {
+        ps.setString(1, cuenta.getCorreo());
+        ps.setString(2, cuenta.getContraseña());
+        ResultSet rs = ps.executeQuery();
+        
+        if (rs.next()) {  // Si hay un resultado, el inicio de sesión es exitoso
+            return "Inicio de sesión exitoso";
+        } else {
+            return "Correo o contraseña incorrectos";
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+        return "Error al intentar iniciar sesión: " + e.getMessage();
+    }
 }
+
+    }
+    
+    
+    
+
+
